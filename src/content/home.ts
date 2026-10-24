@@ -9,23 +9,14 @@ import type { FaqItem } from "./types";
  */
 
 export const welcomeContent = {
-  eyebrow: "Selamat datang",
-  title: "Belajar Bahasa Jepang, Sejak Hari Pertama.",
-  description:
-    "Kelas online dengan jalur empat level. Mulai dari nol, naik satu langkah tiap kali, sampai N2.",
-  primaryCta: { label: "Lihat Level", href: "#program" },
-  secondaryCta: { label: "Konsultasi Gratis", href: "#konsultasi" },
-} as const;
-
-export const heroContent = {
-  eyebrow: "Kursus bahasa Jepang online",
+  welcome: "Selamat datang di Mirski Japanese · Tempat progresmu mulai terlihat",
   title: {
     lead: "Dari kata pertama",
     accent: "sampai N2",
     tail: "— satu jalur jelas.",
   },
   description:
-    "Empat level terstruktur, N5 sampai N2. Progres yang terukur, bukan tebak-tebakan.",
+    "Mulai dari nol tanpa bingung arah. Empat level terstruktur, progres yang terukur, dan satu langkah kecil yang selalu jelas di depan.",
   primaryCta: { label: "Lihat Level", href: "#program" },
   secondaryCta: { label: "Konsultasi Gratis", href: "#konsultasi" },
   note: "Empat level · Satu arah",

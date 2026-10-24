@@ -3,7 +3,6 @@ import { CareerCta } from "@/components/sections/CareerCta";
 import { Consultation } from "@/components/sections/Consultation";
 import { Faq } from "@/components/sections/Faq";
 import { Features } from "@/components/sections/Features";
-import { Hero } from "@/components/sections/Hero";
 import { Journey } from "@/components/sections/Journey";
 import { Marquee } from "@/components/sections/Marquee";
 import { Pricing } from "@/components/sections/Pricing";
@@ -14,7 +13,6 @@ export default function HomePage() {
   return (
     <>
       <Welcome />
-      <Hero />
       <Marquee />
       <About />
       <Journey />

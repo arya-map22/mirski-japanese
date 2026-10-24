@@ -6,16 +6,16 @@ import { ArrowRight, WhatsApp } from "@/components/ui/Icons";
 import { welcomeContent } from "@/content/home";
 
 /**
- * Top-of-page welcome band. The backdrop is an original abstract SVG composition
- * (no stock photography is available or invented for this project).
+ * Top band: welcome line, headline, and the primary actions, all centred over an
+ * original abstract SVG backdrop (no stock photography is available or invented
+ * for this project).
+ *
+ * Reveals here are load-time entrances: this band is visible on arrival, so
+ * scroll-linked animation would never get a chance to play.
  */
 export function Welcome() {
   return (
-    <section
-      id="top"
-      aria-labelledby="welcome-heading"
-      className="relative isolate overflow-hidden"
-    >
+    <section id="top" aria-labelledby="hero-heading" className="relative isolate overflow-hidden">
       <Image
         src="/welcome-bg.svg"
         alt=""
@@ -25,39 +25,47 @@ export function Welcome() {
         sizes="100vw"
         className="welcome-bg -z-10 object-cover"
       />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-cream/55 sm:bg-cream/40"
-      />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-cream/60 sm:bg-cream/45" />
       {/* Soft hand-off into the next band, so the edge never reads as a cut. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-linear-to-b from-transparent to-cream"
       />
 
-      <Container className="py-16 sm:py-20 lg:py-24">
-        <div className="welcome-exit max-w-2xl">
+      <Container className="welcome-exit py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <p
-            className="enter text-[0.7rem] font-semibold tracking-[0.18em] text-ink-soft uppercase"
+            className="enter inline-flex items-center gap-2 rounded-full bg-cream/70 px-4 py-1.5 text-[0.7rem] font-semibold tracking-[0.16em] text-ink-muted uppercase backdrop-blur-sm"
             style={{ animationDelay: "60ms" }}
           >
-            {welcomeContent.eyebrow}
+            {welcomeContent.welcome}
           </p>
+
           <h1
-            id="welcome-heading"
-            className="enter mt-5 text-[clamp(2.25rem,5.4vw,3.9rem)] leading-[1.02] font-extrabold tracking-[-0.035em] text-balance text-ink"
+            id="hero-heading"
+            className="enter mt-6 text-[clamp(2.5rem,6.2vw,4.5rem)] leading-[0.98] font-extrabold tracking-[-0.035em] text-balance text-ink"
             style={{ animationDelay: "140ms" }}
           >
-            {welcomeContent.title}
+            {welcomeContent.title.lead}{" "}
+            <span className="relative inline-block whitespace-nowrap">
+              <span className="relative z-10">{welcomeContent.title.accent}</span>
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-1 -z-0 h-[0.35em] rounded-sm bg-brand"
+              />
+            </span>{" "}
+            {welcomeContent.title.tail}
           </h1>
+
           <p
-            className="enter mt-5 max-w-xl text-lg leading-8 text-ink-muted"
+            className="enter mt-6 max-w-xl text-lg leading-8 text-ink-muted sm:text-xl sm:leading-9"
             style={{ animationDelay: "220ms" }}
           >
             {welcomeContent.description}
           </p>
+
           <div
-            className="enter mt-8 flex flex-wrap items-center gap-3"
+            className="enter mt-9 flex flex-wrap items-center justify-center gap-3"
             style={{ animationDelay: "300ms" }}
           >
             <ButtonLink href={welcomeContent.primaryCta.href} variant="dark">
@@ -69,6 +77,13 @@ export function Welcome() {
               {welcomeContent.secondaryCta.label}
             </ButtonLink>
           </div>
+
+          <p
+            className="enter mt-8 text-sm font-medium tracking-wide text-ink-soft"
+            style={{ animationDelay: "380ms" }}
+          >
+            {welcomeContent.note}
+          </p>
         </div>
       </Container>
     </section>
