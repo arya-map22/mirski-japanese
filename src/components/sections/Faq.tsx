@@ -36,7 +36,7 @@ export function Faq() {
                 <AccordionItem
                   key={item.question}
                   value={item.question}
-                  className="rounded-2xl border border-ink/10 bg-cream px-5 not-last:border-b data-[state=open]:bg-cream-deep/40"
+                  className="rounded-2xl border border-ink/10 bg-cream px-5 not-last:border-b"
                 >
                   <AccordionTrigger className="gap-6 py-4 text-base font-bold text-ink hover:no-underline">
                     {item.question}
