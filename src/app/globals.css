@@ -112,6 +112,22 @@
         animation-range: entry 0% cover 40%;
       }
 
+      /* Welcome background drifts while the band scrolls out, so leaving the
+         first screen reads as movement instead of a hard edge. */
+      .welcome-bg {
+        animation: bg-drift linear both;
+        animation-timeline: view();
+        animation-range: exit 0% exit 100%;
+      }
+
+      /* Welcome copy recedes at its own pace, giving the hand-off to the next
+         band a layered feel rather than one flat scroll. */
+      .welcome-exit {
+        animation: welcome-exit linear both;
+        animation-timeline: view();
+        animation-range: exit 0% exit 80%;
+      }
+
       /* Carousel focus: the card nearest the inline centre is full strength,
          neighbours fade and shrink. Tied to the horizontal scroll offset, so it
          works without JavaScript. */
@@ -186,6 +202,28 @@
     }
   }
 
+  @keyframes welcome-exit {
+    from {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      opacity: 0.35;
+      transform: translate3d(0, -28px, 0);
+    }
+  }
+
+  @keyframes bg-drift {
+    from {
+      transform: translate3d(0, 0, 0) scale(1.04);
+      opacity: 1;
+    }
+    to {
+      transform: translate3d(0, -12%, 0) scale(1.12);
+      opacity: 0.55;
+    }
+  }
+
   @keyframes slide-focus {
     0%,
     100% {
@@ -225,7 +263,9 @@
     .enter,
     .float,
     .marquee-track,
-    .rail-grow {
+    .rail-grow,
+    .welcome-bg,
+    .welcome-exit {
       animation: none;
     }
 

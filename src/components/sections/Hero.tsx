@@ -22,16 +22,18 @@ export function Hero() {
         />
       </div>
 
+      {/* The first band below Welcome is where the page starts to move, so its
+          reveals are scroll-linked rather than load-time: they play as the band
+          scrolls up under the welcome backdrop. */}
       <Container className="grid items-center gap-12 pt-12 pb-16 sm:pt-16 lg:grid-cols-12 lg:gap-10 lg:pt-20 lg:pb-24">
         <div className="lg:col-span-7">
-          <div className="enter" style={{ animationDelay: "60ms" }}>
+          <div className="reveal-title">
             <Eyebrow>{heroContent.eyebrow}</Eyebrow>
           </div>
 
           <h1
             id="hero-heading"
-            className="enter mt-6 max-w-3xl text-[clamp(2.75rem,6.8vw,4.75rem)] leading-[0.98] font-extrabold tracking-[-0.035em] text-balance text-ink"
-            style={{ animationDelay: "140ms" }}
+            className="reveal mt-6 max-w-3xl text-[clamp(2.75rem,6.8vw,4.75rem)] leading-[0.98] font-extrabold tracking-[-0.035em] text-balance text-ink"
           >
             {heroContent.title.lead}{" "}
             <span className="relative inline-block whitespace-nowrap">
@@ -44,17 +46,11 @@ export function Hero() {
             {heroContent.title.tail}
           </h1>
 
-          <p
-            className="enter mt-6 max-w-xl text-lg leading-8 text-ink-muted sm:text-xl sm:leading-9"
-            style={{ animationDelay: "220ms" }}
-          >
+          <p className="reveal mt-6 max-w-xl text-lg leading-8 text-ink-muted sm:text-xl sm:leading-9">
             {heroContent.description}
           </p>
 
-          <div
-            className="enter mt-8 flex flex-wrap items-center gap-3"
-            style={{ animationDelay: "300ms" }}
-          >
+          <div className="reveal mt-8 flex flex-wrap items-center gap-3">
             <ButtonLink href={heroContent.primaryCta.href} variant="dark">
               {heroContent.primaryCta.label}
               <ArrowRight className="size-4" />
@@ -65,19 +61,13 @@ export function Hero() {
             </ButtonLink>
           </div>
 
-          <p
-            className="enter mt-8 text-sm font-medium tracking-wide text-ink-soft"
-            style={{ animationDelay: "380ms" }}
-          >
+          <p className="reveal mt-8 text-sm font-medium tracking-wide text-ink-soft">
             {heroContent.note}
           </p>
         </div>
 
         <div className="lg:col-span-5">
-          <div
-            className="enter rounded-[2rem] border border-ink/10 bg-cream p-6 shadow-[0_18px_50px_-30px_rgba(36,28,16,0.45)] transition-shadow duration-500 hover:shadow-[0_28px_70px_-30px_rgba(36,28,16,0.55)] sm:p-8"
-            style={{ animationDelay: "260ms" }}
-          >
+          <div className="reveal rounded-[2rem] border border-ink/10 bg-cream p-6 shadow-[0_18px_50px_-30px_rgba(36,28,16,0.45)] transition-shadow duration-500 hover:shadow-[0_28px_70px_-30px_rgba(36,28,16,0.55)] sm:p-8">
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-ink-soft uppercase">

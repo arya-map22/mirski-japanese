@@ -23,15 +23,20 @@ export function Welcome() {
         fill
         priority
         sizes="100vw"
-        className="-z-10 object-cover"
+        className="welcome-bg -z-10 object-cover"
       />
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-cream/55 sm:bg-cream/40"
       />
+      {/* Soft hand-off into the next band, so the edge never reads as a cut. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-linear-to-b from-transparent to-cream"
+      />
 
       <Container className="py-16 sm:py-20 lg:py-24">
-        <div className="max-w-2xl">
+        <div className="welcome-exit max-w-2xl">
           <p
             className="enter text-[0.7rem] font-semibold tracking-[0.18em] text-ink-soft uppercase"
             style={{ animationDelay: "60ms" }}
