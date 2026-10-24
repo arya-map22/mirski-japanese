@@ -6,12 +6,12 @@ import { featuresContent } from "@/content/home";
 
 export function Features() {
   return (
-    <section id="keunggulan" aria-labelledby="features-heading" className="py-16 sm:py-24">
+    <section id="keunggulan" aria-labelledby="features-heading" className="reveal-wash py-16 sm:py-24">
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <Eyebrow>{featuresContent.eyebrow}</Eyebrow>
-            <SectionTitle id="features-heading" className="mt-6">
+            <SectionTitle id="features-heading" className="reveal-title mt-6">
               {featuresContent.title}
             </SectionTitle>
           </div>

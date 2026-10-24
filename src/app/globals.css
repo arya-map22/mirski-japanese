@@ -83,6 +83,43 @@
         animation-timeline: view();
         animation-range: entry 10% cover 70%;
       }
+
+      /* Section-level entrance: headings drift in from the side while the
+         section crosses the viewport, so section changes read as motion rather
+         than a hard cut. */
+      .reveal-title {
+        animation: reveal-slide linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 26%;
+      }
+
+      /* Depth cue: a tint washes off a section as it enters. Painted on a
+         pseudo-element so it never overrides the section's own background. */
+      .reveal-wash {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .reveal-wash::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background-color: color-mix(in oklab, var(--color-cream-deep) 70%, transparent);
+        animation: reveal-wash linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+      }
+
+      /* Carousel focus: the card nearest the inline centre is full strength,
+         neighbours fade and shrink. Tied to the horizontal scroll offset, so it
+         works without JavaScript. */
+      .slide-focus {
+        animation: slide-focus linear both;
+        animation-timeline: view(inline);
+        animation-range: cover;
+      }
     }
 
     .float {
@@ -129,6 +166,38 @@
     }
   }
 
+  @keyframes reveal-slide {
+    from {
+      opacity: 0;
+      transform: translate3d(-18px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes reveal-wash {
+    from {
+      background-color: color-mix(in oklab, var(--color-cream-deep) 60%, transparent);
+    }
+    to {
+      background-color: transparent;
+    }
+  }
+
+  @keyframes slide-focus {
+    0%,
+    100% {
+      opacity: 0.4;
+      transform: scale(0.94);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
   @keyframes float {
     0%,
     100% {
@@ -150,8 +219,19 @@
       scroll-behavior: auto;
     }
 
-    .reveal {
+    .reveal,
+    .reveal-title,
+    .slide-focus,
+    .enter,
+    .float,
+    .marquee-track,
+    .rail-grow {
       animation: none;
+    }
+
+    /* The wash tint only exists as an animation, so drop it entirely. */
+    .reveal-wash::before {
+      content: none;
     }
 
     *,

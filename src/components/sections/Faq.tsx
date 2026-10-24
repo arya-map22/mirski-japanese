@@ -5,12 +5,12 @@ import { faqContent } from "@/content/home";
 
 export function Faq() {
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-16 sm:py-24">
+    <section id="faq" aria-labelledby="faq-heading" className="reveal-wash py-16 sm:py-24">
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <Eyebrow>{faqContent.eyebrow}</Eyebrow>
-            <SectionTitle id="faq-heading" className="mt-6">
+            <SectionTitle id="faq-heading" className="reveal-title mt-6">
               {faqContent.title}
             </SectionTitle>
             <p className="mt-5 max-w-xs text-sm leading-7 text-ink-muted">

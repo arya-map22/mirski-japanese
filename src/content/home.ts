@@ -8,6 +8,15 @@ import type { FaqItem } from "./types";
  * verified information has been supplied. Replace before launch.
  */
 
+export const welcomeContent = {
+  eyebrow: "Selamat datang",
+  title: "Belajar Bahasa Jepang, Sejak Hari Pertama.",
+  description:
+    "Kelas online dengan jalur empat level. Mulai dari nol, naik satu langkah tiap kali, sampai N2.",
+  primaryCta: { label: "Lihat Level", href: "#program" },
+  secondaryCta: { label: "Konsultasi Gratis", href: "#konsultasi" },
+} as const;
+
 export const heroContent = {
   eyebrow: "Kursus bahasa Jepang online",
   title: {
@@ -43,6 +52,13 @@ export const journeyContent = {
   title: "Empat Langkah, Satu Arah.",
   description: "Naik satu level tiap kali. Urutannya sudah disiapkan.",
   note: "Level JLPT dipakai sebagai acuan progres, bukan jaminan hasil ujian.",
+} as const;
+
+export const pricingContent = {
+  eyebrow: "Pilihan kelas",
+  title: "Empat Kelas, Satu Jalur.",
+  description: "Pilih titik mulai yang paling dekat dengan levelmu sekarang.",
+  priceNote: "Harga placeholder.",
 } as const;
 
 export const featuresContent = {
@@ -116,6 +132,30 @@ export const testimonialsContent = {
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
       name: "Sit Amet",
       role: "Sed Eiusmod",
+    },
+    {
+      quote:
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.",
+      name: "Elit Sed",
+      role: "Tempor Incididunt",
+    },
+    {
+      quote:
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
+      name: "Magna Aliqua",
+      role: "Ut Labore",
+    },
+    {
+      quote:
+        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.",
+      name: "Veniam Quis",
+      role: "Nostrud Exercitation",
+    },
+    {
+      quote:
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+      name: "Aliquam Quaerat",
+      role: "Voluptatem",
     },
   ] satisfies readonly Testimonial[],
 } as const;

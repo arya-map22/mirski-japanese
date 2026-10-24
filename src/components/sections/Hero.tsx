@@ -7,7 +7,7 @@ import { heroContent } from "@/content/home";
 
 export function Hero() {
   return (
-    <section id="top" aria-labelledby="hero-heading" className="relative overflow-hidden">
+    <section aria-labelledby="hero-heading" className="reveal-wash relative overflow-hidden">
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[28rem] bg-linear-to-b from-cream-deep/80 to-transparent" />
 
       {/* Decorative depth. Purely ornamental, hidden from assistive tech. */}

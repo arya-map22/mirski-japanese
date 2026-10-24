@@ -7,6 +7,10 @@ export type CourseLevel = {
   description: string;
   focus: string;
   goal: string;
+  audience: string;
+  /** PLACEHOLDER until verified pricing exists. */
+  price: string;
+  priceNote: string;
 };
 
 export type FaqItem = {

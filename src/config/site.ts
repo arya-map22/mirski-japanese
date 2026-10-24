@@ -30,7 +30,8 @@ export type NavItem = {
 
 export const navigation = [
   { label: "Beranda", href: "#top" },
-  { label: "Program", href: "#program" },
+  { label: "Level", href: "#program" },
+  { label: "Kelas", href: "#kelas" },
   { label: "Tentang", href: "#tentang" },
   { label: "Testimoni", href: "#testimoni" },
   { label: "FAQ", href: "#faq" },

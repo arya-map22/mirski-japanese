@@ -10,11 +10,11 @@ const accents = ["bg-brand", "bg-brand-orange", "bg-brand-deep", "bg-cream-deep"
 /** Vertical path: N5 at the top, N2 at the bottom, joined by a single rail. */
 export function Journey() {
   return (
-    <section id="program" aria-labelledby="program-heading" className="py-16 sm:py-24">
+    <section id="program" aria-labelledby="program-heading" className="reveal-wash py-16 sm:py-24">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <Eyebrow>{journeyContent.eyebrow}</Eyebrow>
-          <SectionTitle id="program-heading" className="mt-6">
+          <SectionTitle id="program-heading" className="reveal-title mt-6">
             {journeyContent.title}
           </SectionTitle>
           <p className="mt-4 text-lg leading-8 text-ink-muted">{journeyContent.description}</p>

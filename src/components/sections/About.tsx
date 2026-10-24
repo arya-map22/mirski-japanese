@@ -5,12 +5,12 @@ import { aboutContent } from "@/content/home";
 
 export function About() {
   return (
-    <section id="tentang" aria-labelledby="about-heading" className="py-16 sm:py-24">
+    <section id="tentang" aria-labelledby="about-heading" className="reveal-wash py-16 sm:py-24">
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <Eyebrow>{aboutContent.eyebrow}</Eyebrow>
-            <SectionTitle id="about-heading" className="mt-6">
+            <SectionTitle id="about-heading" className="reveal-title mt-6">
               {aboutContent.title}
             </SectionTitle>
           </div>
