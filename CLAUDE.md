@@ -40,3 +40,14 @@ If a listed file does not exist, do not assume its contents; inspect the reposit
 ## Tooling note
 
 On Windows, use the terminal/shell tool actually available in the current environment. Never invent tool names or assume a command ran; if execution fails, report the exact error.
+
+## Auto-push
+
+`.claude/hooks/auto-push.sh` runs on the `Stop` hook: after a turn that changed files, it
+gates on `pnpm typecheck` and `pnpm lint`, commits, and pushes to `origin/main`. Pushes to
+`main` deploy through the Vercel Git integration, so no Vercel CLI login is needed.
+
+- A failing check aborts the push and leaves the changes local. Fix the failure instead of
+  bypassing the hook.
+- The commit message is fixed (`chore: auto-commit session changes`). Write meaningful
+  commits yourself before the turn ends when the change deserves a better message.
