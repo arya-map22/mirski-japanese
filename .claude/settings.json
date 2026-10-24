@@ -1,0 +1,19 @@
+{
+  "enabledPlugins": {
+    "vercel@anthropic-plugin-directory": true
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/auto-push.sh",
+            "timeout": 300,
+            "statusMessage": "Auto-commit + push"
+          }
+        ]
+      }
+    ]
+  }
+}
