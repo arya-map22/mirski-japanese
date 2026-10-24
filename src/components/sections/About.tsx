@@ -1,11 +1,17 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PatternDecor } from "@/components/ui/PatternDecor";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { aboutContent } from "@/content/home";
 
 export function About() {
   return (
-    <section id="tentang" aria-labelledby="about-heading" className="reveal-wash py-16 sm:py-24">
+    <section
+      id="tentang"
+      aria-labelledby="about-heading"
+      className="reveal-wash band-deep relative isolate overflow-hidden py-16 sm:py-24"
+    >
+      <PatternDecor side="left" className="top-8 -left-24 w-56 sm:w-72" />
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">

@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PatternDecor } from "@/components/ui/PatternDecor";
 import { ArrowRight } from "@/components/ui/Icons";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { courses } from "@/content/courses";
@@ -11,7 +12,12 @@ import { pricingContent } from "@/content/home";
  */
 export function Pricing() {
   return (
-    <section id="kelas" aria-labelledby="pricing-heading" className="reveal-wash py-16 sm:py-24">
+    <section
+      id="kelas"
+      aria-labelledby="pricing-heading"
+      className="reveal-wash band-deep relative isolate overflow-hidden py-16 sm:py-24"
+    >
+      <PatternDecor side="left" className="bottom-8 -left-24 w-56 sm:w-80" />
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <Eyebrow>{pricingContent.eyebrow}</Eyebrow>
@@ -60,7 +66,8 @@ export function Pricing() {
                 </dl>
 
                 <a
-                  href="#konsultasi"
+                  href="#consult-dialog"
+                  data-consult
                   className="mt-5 inline-flex min-h-11 items-center gap-2 font-bold text-ink underline decoration-brand-deep decoration-2 underline-offset-4 transition-colors hover:text-ink-muted"
                 >
                   Tanya kelas ini

@@ -1,16 +1,21 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PatternDecor } from "@/components/ui/PatternDecor";
 import { ArrowRight } from "@/components/ui/Icons";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { courses } from "@/content/courses";
 import { journeyContent } from "@/content/home";
 
-const accents = ["bg-brand", "bg-brand-orange", "bg-brand-deep", "bg-cream-deep"] as const;
 
 /** Vertical path: N5 at the top, N2 at the bottom, joined by a single rail. */
 export function Journey() {
   return (
-    <section id="program" aria-labelledby="program-heading" className="reveal-wash py-16 sm:py-24">
+    <section
+      id="program"
+      aria-labelledby="program-heading"
+      className="reveal-wash band-cream relative isolate overflow-hidden py-16 sm:py-24"
+    >
+      <PatternDecor side="right" className="top-24 -right-20 w-56 sm:w-80" />
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <Eyebrow>{journeyContent.eyebrow}</Eyebrow>
@@ -39,7 +44,7 @@ export function Journey() {
                 <div className="reveal group flex gap-5 sm:gap-7">
                   <span
                     aria-hidden="true"
-                    className={`relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full text-sm font-extrabold text-ink ring-[6px] ring-cream transition-transform duration-300 group-hover:scale-110 sm:size-14 ${accents[index % accents.length]}`}
+                    className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-extrabold text-ink ring-[6px] ring-cream transition-transform duration-300 group-hover:scale-110 sm:size-14"
                   >
                     {course.number}
                   </span>
@@ -76,7 +81,8 @@ export function Journey() {
                     </dl>
 
                     <a
-                      href="#konsultasi"
+                      href="#consult-dialog"
+                      data-consult
                       className="mt-5 inline-flex min-h-11 items-center gap-2 font-bold text-ink underline decoration-brand-deep decoration-2 underline-offset-4 transition-colors hover:text-ink-muted"
                     >
                       Tanya level ini

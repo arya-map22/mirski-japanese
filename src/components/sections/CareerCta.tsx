@@ -1,5 +1,5 @@
 import { ArrowRight } from "@/components/ui/Icons";
-import { ButtonLink } from "@/components/ui/ButtonLink";
+import { ButtonLink, ConsultButton } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { careerContent } from "@/content/home";
 
@@ -28,10 +28,10 @@ export function CareerCta() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="#konsultasi" variant="dark">
+              <ConsultButton variant="dark">
                 {careerContent.buttonLabel}
                 <ArrowRight className="size-4" />
-              </ButtonLink>
+              </ConsultButton>
               <ButtonLink href={careerContent.primaryCta.href} variant="light">
                 {careerContent.primaryCta.label}
               </ButtonLink>

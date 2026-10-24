@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { ConsultDialog } from "@/components/ui/ConsultDialog";
 import { siteConfig, siteUrl } from "@/config/site";
 
 import "./globals.css";
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           {children}
         </main>
         <SiteFooter />
+        <ConsultDialog />
       </body>
     </html>
   );

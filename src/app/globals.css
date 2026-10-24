@@ -66,6 +66,33 @@
     animation: fade-up 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
+  /* Section bands. Adjacent sections alternate between these two so the page
+     changes tone as it scrolls; the gradient end keeps each join soft instead of
+     a hard colour step. */
+  .band-cream {
+    background-color: var(--color-cream);
+  }
+
+  .band-deep {
+    background-image: linear-gradient(
+      to bottom,
+      var(--color-cream),
+      var(--color-cream-deep) 18%,
+      var(--color-cream-deep) 82%,
+      var(--color-cream)
+    );
+  }
+
+  .band-brand {
+    background-image: linear-gradient(
+      to bottom,
+      var(--color-cream),
+      color-mix(in oklab, var(--color-brand) 22%, var(--color-cream)) 18%,
+      color-mix(in oklab, var(--color-brand) 22%, var(--color-cream)) 82%,
+      var(--color-cream)
+    );
+  }
+
   /* Scroll-reveal: progressive enhancement, no JavaScript. Browsers without
      view-timeline support simply render the content at rest. */
   @media (prefers-reduced-motion: no-preference) {

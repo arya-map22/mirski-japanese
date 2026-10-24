@@ -1,11 +1,17 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PatternDecor } from "@/components/ui/PatternDecor";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { faqContent } from "@/content/home";
 
 export function Faq() {
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="reveal-wash py-16 sm:py-24">
+    <section
+      id="faq"
+      aria-labelledby="faq-heading"
+      className="reveal-wash band-deep relative isolate overflow-hidden py-16 sm:py-24"
+    >
+      <PatternDecor side="right" className="top-10 -right-24 w-56 sm:w-72" />
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">

@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PatternDecor } from "@/components/ui/PatternDecor";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { testimonialsContent } from "@/content/home";
 
@@ -18,8 +19,10 @@ export function Testimonials() {
     <section
       id="testimoni"
       aria-labelledby="testimonials-heading"
-      className="reveal-wash bg-cream-deep/60 py-16 sm:py-24"
+      className="reveal-wash band-brand relative isolate overflow-hidden py-16 sm:py-24"
     >
+      <PatternDecor side="left" className="top-1/2 -left-28 w-56 -translate-y-1/2 sm:w-80" />
+      <PatternDecor side="right" className="top-1/2 -right-28 w-56 -translate-y-1/2 sm:w-80" />
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <Eyebrow>{testimonialsContent.eyebrow}</Eyebrow>

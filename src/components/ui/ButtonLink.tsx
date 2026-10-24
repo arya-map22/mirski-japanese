@@ -30,19 +30,26 @@ export function ButtonLink({ href, children, variant = "primary", className }: B
 }
 
 /**
- * Consultation button. The WhatsApp channel is not connected yet, so this renders a
- * disabled-looking but focusable button that does nothing. Replace with ButtonLink
- * once the real channel exists.
+ * Opens the consultation modal. Rendered as an anchor so it still has a target
+ * without JavaScript (`#consult-dialog`); the dialog's delegated listener
+ * intercepts the click and calls `showModal()` instead.
  */
-export function DemoButton({ children, className }: { children: ReactNode; className?: string }) {
+export function ConsultButton({
+  children,
+  variant = "dark",
+  className,
+}: {
+  children: ReactNode;
+  variant?: ButtonVariant;
+  className?: string;
+}) {
   return (
-    <button
-      type="button"
-      aria-disabled="true"
-      title="Demo — kanal WhatsApp belum terhubung"
-      className={cn(base, "cursor-not-allowed bg-brand-deep text-ink/70", className)}
+    <a
+      href="#consult-dialog"
+      data-consult
+      className={cn(base, variants[variant], className)}
     >
       {children}
-    </button>
+    </a>
   );
 }

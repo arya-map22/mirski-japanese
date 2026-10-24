@@ -84,14 +84,10 @@ export const consultContent = {
   eyebrow: "Konsultasi",
   title: "Belum Tahu Mulai dari Mana?",
   description: "Ceritakan tujuanmu. Tim Mirski bantu pilih level yang paling pas.",
-  buttonLabel: "Konsultasi Gratis via WhatsApp",
-  // Shown under the button. Remove when the real WhatsApp channel exists.
-  demoNote: "Tombol demo — kanal WhatsApp belum terhubung.",
-  aside: {
-    title: "Sebelum mulai",
-    body: "Tiga hal yang akan ditanyakan tim Mirski.",
-    items: ["Tujuan belajar", "Level saat ini", "Waktu belajar"],
-  },
+  ctaLabel: "Konsultasi Gratis",
+  buttonLabel: "Kirim via WhatsApp",
+  // Shown in the form. Remove when the real WhatsApp channel exists.
+  demoNote: "Form demo — kanal WhatsApp belum terhubung.",
 } as const;
 
 export type Testimonial = {

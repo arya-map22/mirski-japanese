@@ -1,12 +1,18 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FeatureIcon, type FeatureIconName } from "@/components/ui/Icons";
+import { PatternDecor } from "@/components/ui/PatternDecor";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { featuresContent } from "@/content/home";
 
 export function Features() {
   return (
-    <section id="keunggulan" aria-labelledby="features-heading" className="reveal-wash py-16 sm:py-24">
+    <section
+      id="keunggulan"
+      aria-labelledby="features-heading"
+      className="reveal-wash band-cream relative isolate overflow-hidden py-16 sm:py-24"
+    >
+      <PatternDecor side="right" className="bottom-4 -right-24 w-56 sm:w-72" />
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { ButtonLink } from "@/components/ui/ButtonLink";
+import { ButtonLink, ConsultButton } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { ArrowRight, WhatsApp } from "@/components/ui/Icons";
 import { welcomeContent } from "@/content/home";
@@ -76,10 +76,10 @@ export function Welcome() {
               {welcomeContent.primaryCta.label}
               <ArrowRight className="size-4" />
             </ButtonLink>
-            <ButtonLink href={welcomeContent.secondaryCta.href} variant="outline">
+            <ConsultButton variant="outline">
               <WhatsApp className="size-4" />
               {welcomeContent.secondaryCta.label}
-            </ButtonLink>
+            </ConsultButton>
           </div>
 
           <p

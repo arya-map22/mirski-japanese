@@ -39,7 +39,7 @@ export const navigation = [
 
 export const consultCta = {
   label: "Konsultasi Gratis",
-  href: "#konsultasi",
+  href: "#consult-dialog",
 } as const;
 
 export const siteConfig = {
@@ -71,7 +71,7 @@ export const footerContent = {
       title: "Dukungan",
       links: [
         { label: "FAQ", href: "#faq" },
-        { label: "Konsultasi", href: "#konsultasi" },
+        { label: "Konsultasi", href: "#consult-dialog" },
       ],
     },
   ],
