@@ -21,9 +21,9 @@ export function SectionTitle({
     <h2
       id={id}
       className={cn(
-        "font-display leading-[1.05] font-medium tracking-[-0.025em] text-pretty",
+        "leading-[1.05] font-bold tracking-[-0.03em] text-balance",
         size === "lg" ? "text-[clamp(2.4rem,5.5vw,4.25rem)]" : "text-[clamp(2rem,4.5vw,3.25rem)]",
-        tone === "dark" ? "text-paper" : "text-ink",
+        tone === "dark" ? "text-cream" : "text-ink",
         className,
       )}
     >

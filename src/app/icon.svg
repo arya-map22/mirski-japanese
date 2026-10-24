@@ -1,12 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mirski Japanese">
-  <rect width="64" height="64" fill="#b23a2a" />
+  <rect width="64" height="64" rx="14" fill="#ffcc55" />
   <path
-    d="M14 46V18l18 19 18-19v28"
+    d="M16 46V18l16 17 16-17v28"
     fill="none"
-    stroke="#f7f2e7"
-    stroke-width="4.5"
-    stroke-linecap="square"
+    stroke="#241c10"
+    stroke-width="7"
+    stroke-linecap="round"
     stroke-linejoin="round"
   />
-  <path d="M14 52h36" stroke="#f7f2e7" stroke-width="2" opacity="0.55" />
 </svg>

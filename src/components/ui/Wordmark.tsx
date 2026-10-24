@@ -1,35 +1,29 @@
+import Image from "next/image";
+
 import { cn } from "@/lib/cn";
 
 type WordmarkProps = {
   tone?: "light" | "dark";
   className?: string;
+  priority?: boolean;
 };
 
-export function Wordmark({ tone = "light", className }: WordmarkProps) {
+/**
+ * Brand logo supplied in assets/LOGOGRAM.svg, trimmed and exported as a transparent
+ * PNG in public/. Source asset is left untouched.
+ */
+export function Wordmark({ tone = "light", className, priority = false }: WordmarkProps) {
   return (
-    <span className={cn("inline-flex items-center gap-3", className)}>
-      <span
-        aria-hidden="true"
-        className="seal-glyph flex size-9 shrink-0 items-center justify-center bg-vermilion font-jp text-lg leading-none text-paper"
+    <span className={cn("inline-flex items-center", className)}>
+      <Image
+        src="/mirski-logo.png"
+        alt="Mirski Japanese"
+        width={560}
+        height={303}
+        priority={priority}
+        sizes="(max-width: 640px) 132px, 168px"
+        className={cn("h-11 w-auto sm:h-12", tone === "dark" && "brightness-105")}
       />
-      <span className="flex flex-col leading-none">
-        <span
-          className={cn(
-            "font-display text-[1.3rem] font-semibold tracking-[-0.02em]",
-            tone === "dark" ? "text-paper" : "text-ink",
-          )}
-        >
-          Mirski
-        </span>
-        <span
-          className={cn(
-            "mt-1.5 text-[0.55rem] font-semibold tracking-[0.28em] uppercase",
-            tone === "dark" ? "text-paper/60" : "text-ink-muted",
-          )}
-        >
-          Japanese
-        </span>
-      </span>
     </span>
   );
 }

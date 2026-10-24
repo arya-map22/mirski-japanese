@@ -2,139 +2,91 @@
 
 ## Direction
 
-**Premium + warm + modern + educational + approachable + trustworthy.**
+**Warm + friendly + modern + educational + trustworthy.**
 
-The visual language is editorial rather than SaaS: warm paper tones, ink-like type,
-generous space, thin rules, and a single vermilion accent. It should feel like a
-well-made printed prospectus — calm, confident, and human — not a dashboard.
+Reference for layout and section flow: a bright, rounded, card-driven education landing
+page (header with consultation CTA, hero, about + stats, level cards, feature cards,
+consultation form, testimonials, career CTA, footer). Brand styling, copy, and assets are
+Mirski's own.
 
-Reference mood words: Japanese stationery, a course handbook, a stamped seal, a
-wayfinding sign. Do not reproduce a specific reference site's layout or assets.
+## Colour
 
-## Principles
+Tokens are defined in `src/app/globals.css` via `@theme`. Brand palette:
 
-- Strong hierarchy before decoration.
-- Generous whitespace; let sections breathe.
-- One clear accent color; use it with restraint.
-- Rules and typography instead of cards and shadows.
-- Clear CTA hierarchy: one primary action per view.
-- Mobile-first; test from 320px upward.
-- Motion only to clarify a state change.
+| Token          | Hex       | Use                                           |
+| -------------- | --------- | --------------------------------------------- |
+| `brand`        | `#FFCC55` | Primary accent: highlights, badges, CTA bands |
+| `brand-deep`   | `#FFB602` | Primary buttons, links on light backgrounds   |
+| `brand-orange` | `#FFA93F` | Hover states / secondary level accents        |
+| `cream-deep`   | `#FFEDCF` | Section tints, cards, chips                   |
+| `cream`        | `#FFFAF2` | Page background, cards on tinted sections     |
+| `ink`          | `#241C10` | Text, dark buttons, borders                   |
+| `ink-muted`    | `#5F5343` | Body copy                                     |
+| `ink-soft`     | `#7A6A52` | Meta text, captions                           |
+| `night`        | `#2B2114` | Dark sections (consultation, footer)          |
 
-## Color
+Contrast (measured):
 
-Tokens are defined in `src/app/globals.css` via `@theme`.
+- `ink` on `brand`: 11.2:1; `ink` on `brand-deep`: 9.6:1; `ink` on `cream`: 16.2:1.
+- `ink-muted` on `cream`: 7.2:1; `ink-muted` on `cream-deep`: 6.5:1.
+- `ink-soft` on `cream`: 5.0:1 (meta only, never long body text).
+- `cream` on `night`: 14.9:1; `brand` on `night`: 10.5:1.
 
-| Token             | Hex       | Use                                          |
-| ----------------- | --------- | -------------------------------------------- |
-| `paper`           | `#F7F2E7` | Page background                              |
-| `paper-deep`      | `#EFE7D8` | Course section background                    |
-| `ink`             | `#1C1A16` | Primary text, dark sections, primary buttons |
-| `ink-muted`       | `#5A5348` | Body copy, secondary labels                  |
-| `vermilion`       | `#B23A2A` | Accent, links, seals, focus ring on light    |
-| `vermilion-deep`  | `#8C2B1E` | Final CTA background                         |
-| `vermilion-light` | `#E9A08D` | Accent text on dark backgrounds              |
-| `moss`            | `#55604D` | Reserved; not used in the initial shell      |
-
-Approximate contrast checks:
-
-- `ink` on `paper`: ~16:1.
-- `ink-muted` on `paper`: ~6.8:1.
-- `vermilion` on `paper`: ~5.3:1 (passes AA for normal text).
-- `paper` on `vermilion-deep`: ~7.6:1.
-- `vermilion-light` on `ink`: ~8.3:1.
-
-Do not use vermilion body text on ink; use `vermilion-light` for accents there.
+Never place white text on the yellow palette. Use `ink` on yellow.
 
 ## Typography
 
-- **Display:** Fraunces (variable, Latin subset) through `next/font`. Used for headings,
-  the wordmark, and editorial statements. Fallback includes serif faces.
-- **Body/UI:** Manrope (variable, Latin subset). Used for paragraphs, labels, buttons,
-  and navigation.
-- **Japanese:** system serif stack (`Hiragino Mincho ProN`, `Yu Mincho`, `Noto Serif JP`)
-  via `font-jp`. Used only for small identity accents and level names.
-- Body copy is 16–20px with generous line height (1.6–1.75).
-- Display headings use `clamp()` and tight tracking (`-0.02em` to `-0.035em`).
-- Labels are uppercase, small (0.6–0.7rem), with 0.16–0.2em tracking.
-- Avoid more than two Latin font families.
+- **League Spartan** (variable weights 300–800) via `next/font/google`, Latin subset,
+  `display: "swap"`. Used for all UI and display text.
+- Headings: weight 700–800, tracking −0.03em, `text-balance`, fluid `clamp()` sizes
+  (`2rem → 3.25rem` section, up to `4.75rem` hero).
+- Body: 16–19px, line height 1.6–1.75, `ink-muted`.
+- Labels/eyebrows: 0.7rem, 600–700, tracking 0.16–0.18em, uppercase.
+- Japanese accents use the system JP stack via `font-jp`, always with `lang="ja"`.
 
 ## Layout
 
-- Container: `max-w-6xl` (72rem), horizontal padding 20px → 32px → 40px.
-- Section rhythm: `py-20` mobile, `py-28` tablet, `py-32` desktop for large sections.
-- Primary grid: 12 columns on large screens with asymmetric splits (4/8, 5/7, 7/5).
-- Hero: 7/5 split on desktop; stacked with the path card after the copy on mobile.
-- Header: one row on desktop, two rows on mobile (brand + CTA, then section nav). No
-  hamburger menu is needed for five short links.
-- Desktop header is sticky; mobile header scrolls away to preserve vertical space.
-- Anchor targets use `scroll-margin-top` so the sticky header does not obscure headings.
+- Container `max-w-6xl`, padding 20px → 32px → 40px.
+- Section rhythm `py-16` → `py-24`.
+- Rounded corners: cards `rounded-3xl`, buttons/pills `rounded-full`.
+- Sticky header on all breakpoints: brand + CTA on one row, scrollable nav row on mobile.
+- Anchor targets use `scroll-margin-top`.
 
 ## Components
 
-- **Wordmark:** vermilion seal with `道`, "Mirski" in display serif, "Japanese" in
-  tracked uppercase.
-- **Eyebrow:** short rule plus tracked label. Three tones: light, dark, inverse.
-- **SectionTitle:** shared display heading with light/dark tone and two sizes.
-- **ButtonLink:** rectangular, no pill radius. Variants: solid ink, outline, text,
-  solid light, outline light. Minimum height 44px.
-- **Path card (hero):** bordered top/bottom, numbered level list, seal, short caption.
-- **Course row:** numbered editorial row with JLPT badge, display title, Japanese name,
-  tagline, description, and a two-column definition list.
-- **FAQ:** native `<details>/<summary>` with a custom plus/minus glyph. No JavaScript.
-- **Final CTA:** deep vermilion band with a paper-colored button and a clearly separated
-  contact column.
-
-Do not add a generic card grid, glass panels, or rounded-shadow containers to solve a
-hierarchy problem that typography and rules can solve.
+- **Wordmark:** logo image (`public/mirski-logo.png`, exported from
+  `assets/LOGOGRAM.svg`; source untouched).
+- **Eyebrow:** pill with `cream-deep` background.
+- **SectionTitle:** balance-wrapped heading, light/dark tone.
+- **ButtonLink:** pill, min height 48px. Variants `primary` (yellow), `dark` (ink),
+  `outline`, `light`.
+- **DemoButton:** consultation CTA; deliberately inert until the WhatsApp channel exists.
+- **Level card:** number badge, JLPT tag, name + Japanese name, tagline, description,
+  focus/target definition list, consultation link.
+- **Feature card:** icon tile on `cream-deep`.
+- **Testimonial card:** quote mark, quote, initial avatar, name, role.
+- **FAQ:** native `<details>/<summary>` with plus/minus glyph, no JavaScript.
 
 ## Motion
 
-- Transitions are limited to color and small transforms, 200ms.
-- Arrow nudges on hover are decorative and optional.
-- FAQ plus/minus rotates on open.
-- `prefers-reduced-motion: reduce` disables smooth scrolling and collapses transition
-  durations globally.
-- No scroll-triggered animations, parallax, or entrance animations in the initial shell.
+- Colour transitions only, 200ms; arrow nudge on hover.
+- `prefers-reduced-motion: reduce` disables smooth scrolling and transitions.
 
-## Responsive behavior
+## Imagery
 
-Design and test at:
+- Only the supplied logo is used. No stock photography or fabricated classroom imagery.
+- Placeholder data is text-only (lorem ipsum, `0+` counters) and clearly labelled in the
+  UI or in `src/content/`.
 
-- 320px: no horizontal scroll; headline wraps cleanly; nav fits in one row.
-- 375–430px: standard phone layouts.
-- 768px: two-column course metadata; three-column method/outcome items.
-- 1024px+: asymmetric desktop grids and sticky header.
-- 1440px+: content remains centered; line lengths stay controlled.
+## Responsive behaviour
 
-Use fluid type with `clamp()` rather than many breakpoint-specific font sizes.
+Test at 320px, 390px, 768px, 1024px, 1440px. No horizontal scrolling; nav scrolls
+horizontally on small screens rather than hiding.
 
-## Imagery and assets
+## Do / Don't
 
-- The initial shell uses no photography or illustration. Visual interest comes from
-  typography, rules, and the seal.
-- `assets/` is reserved for source material and is currently empty. Inspect it before
-  adding imagery; do not overwrite source assets.
-- When real imagery is supplied, use `next/image`, explicit dimensions, meaningful alt
-  text, and optimized formats. Avoid decorative stock photography that implies
-  unverified classrooms, instructors, or students.
-- Do not use external image URLs at runtime.
+Do: keep the yellow palette as accent and background tint, keep text dark on yellow,
+preserve generous spacing and rounded cards.
 
-## Do / Don’t
-
-Do:
-
-- Use whitespace and type scale to create hierarchy.
-- Keep rules thin and purposeful.
-- Use vermilion as a wayfinding accent, not a background for everything.
-- Preserve strong contrast and visible focus.
-- Let content determine section height.
-
-Don’t:
-
-- Add gradients, glassmorphism, neon, or heavy shadows.
-- Use pill-shaped buttons or generic SaaS card grids.
-- Add animation that does not communicate state.
-- Use low-contrast gray-on-gray text.
-- Force unrelated assets into the layout.
-- Copy the reference site's branding, illustrations, or section layouts.
+Don't: add white-on-yellow text, gradients beyond subtle section fades, stock photos,
+fabricated statistics/testimonials, or additional font families.

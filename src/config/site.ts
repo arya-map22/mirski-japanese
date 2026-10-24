@@ -28,28 +28,57 @@ export type NavItem = {
   href: string;
 };
 
-export type EnrolmentContact = {
-  label: string;
-  href: string;
-};
-
 export const navigation = [
-  { label: "Why", href: "#why" },
-  { label: "Method", href: "#method" },
-  { label: "Courses", href: "#path" },
+  { label: "Beranda", href: "#top" },
+  { label: "Program", href: "#program" },
+  { label: "Tentang", href: "#tentang" },
+  { label: "Testimoni", href: "#testimoni" },
   { label: "FAQ", href: "#faq" },
 ] as const satisfies readonly NavItem[];
 
-/**
- * TODO: add the official enrolment email or booking URL before launch.
- * The landing page renders an honest placeholder while this is null.
- */
-export const enrolmentContact: EnrolmentContact | null = null;
+export const consultCta = {
+  label: "Konsultasi Gratis",
+  href: "#konsultasi",
+} as const;
 
 export const siteConfig = {
   name: "Mirski Japanese",
   shortName: "Mirski",
-  title: "Mirski Japanese — A clear path from first words to N2",
+  title: "Mirski Japanese — Kursus Bahasa Jepang dari N5 sampai N2",
   description:
-    "A structured Japanese course path from Starter N5 to Advanced N2, built for steady progress and confident use of the language.",
+    "Kursus bahasa Jepang dengan jalur belajar empat level, dari Starter N5 sampai Advanced N2, untuk progres yang terarah dan terukur.",
 };
+
+/** PLACEHOLDER: replace with verified business details before launch. */
+export const footerContent = {
+  tagline:
+    "Kelas bahasa Jepang online interaktif dengan jalur belajar yang terarah dan menyenangkan.",
+  company: "Mirski Japanese",
+  address:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Jl. Contoh No. 00, Kota Contoh 00000.",
+  columns: [
+    {
+      title: "Jelajahi",
+      links: [
+        { label: "Beranda", href: "#top" },
+        { label: "Program", href: "#program" },
+        { label: "Tentang", href: "#tentang" },
+        { label: "Testimoni", href: "#testimoni" },
+      ],
+    },
+    {
+      title: "Dukungan",
+      links: [
+        { label: "FAQ", href: "#faq" },
+        { label: "Konsultasi", href: "#konsultasi" },
+      ],
+    },
+  ],
+  contact: {
+    title: "Kontak",
+    phone: "Lorem ipsum — nomor belum tersedia",
+    email: "lorem@ipsum.example",
+    hours: "Senin – Sabtu (09.00 – 22.00)",
+  },
+  legal: "Lorem ipsum dolor sit amet.",
+} as const;

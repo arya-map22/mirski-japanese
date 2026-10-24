@@ -1,147 +1,185 @@
-import type { ContentItem, FaqItem } from "./types";
+import type { FaqItem } from "./types";
+
+/**
+ * Indonesian landing-page copy.
+ *
+ * Placeholder policy: sections marked PLACEHOLDER contain lorem-ipsum or dummy
+ * business data (statistics, testimonials, features, contact details) because no
+ * verified information has been supplied. Replace before launch.
+ */
 
 export const heroContent = {
-  eyebrow: "Japanese language education",
+  eyebrow: "Kursus bahasa Jepang online",
   title: {
-    lead: "A clear path from",
-    accent: "first words",
-    tail: "to N2.",
+    lead: "Jalan yang jelas dari",
+    accent: "kata pertama",
+    tail: "sampai N2.",
   },
   description:
-    "Mirski Japanese is a four-level course path — Starter N5 through Advanced N2 — for learners who want steady progress, not guesswork.",
-  primaryCta: {
-    label: "Explore the course path",
-    href: "#path",
-  },
-  secondaryCta: {
-    label: "How we teach",
-    href: "#method",
-  },
-  pathLabel: "The full path",
+    "Mirski Japanese adalah kursus bahasa Jepang dengan empat level terstruktur — N5 sampai N2 — untuk kamu yang ingin progres yang jelas, bukan tebak-tebakan.",
+  primaryCta: { label: "Lihat Pilihan Kelas", href: "#program" },
+  secondaryCta: { label: "Konsultasi Gratis", href: "#konsultasi" },
+  note: "Empat level · Satu arah · Satu langkah setiap kali",
 } as const;
 
-export const whyContent = {
-  eyebrow: "Why a path",
-  aside: "Information is everywhere. Direction is rarer.",
-  title: "Most learners don’t need more resources. They need to know what comes next.",
+export const aboutContent = {
+  eyebrow: "Tentang Mirski",
+  title: "Belajar Bahasa Jepang yang Seru & Terarah",
+  description:
+    "Mirski Japanese menghadirkan kursus bahasa Jepang interaktif dengan jalur belajar empat level yang mengikuti skala JLPT, dari N5 hingga N2. Setiap level punya fokus yang jelas dan menyambung ke level berikutnya.",
+  // PLACEHOLDER: statistics require verified numbers before launch.
+  stats: [
+    { value: "0+", label: "Siswa Aktif" },
+    { value: "0+", label: "Tutor Aktif" },
+    { value: "0+", label: "Kelas Aktif" },
+    { value: "0+", label: "Mitra" },
+    { value: "0+", label: "Alumni" },
+  ],
+  statsNote: "Angka statistik masih placeholder.",
+} as const;
+
+export const journeyContent = {
+  eyebrow: "Jalur belajar",
+  title: "Perjalanan Bahasa Jepangmu",
+  description: "Kami mendampingi kamu di setiap tahap perkembangan.",
+  note: "Level JLPT dipakai sebagai acuan progres, bukan jaminan hasil ujian.",
+} as const;
+
+export const featuresContent = {
+  eyebrow: "Kenapa Mirski",
+  title: "Kenapa Belajar di Mirski Japanese?",
+  // PLACEHOLDER: feature copy is lorem ipsum until the real programme details exist.
   items: [
     {
-      title: "Too many starting points",
+      icon: "teacher",
+      title: "Pengajar",
       description:
-        "A folder full of apps, PDFs, and saved videos can feel like preparation. It rarely adds up to a sequence.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
     },
     {
-      title: "No clear measure",
+      icon: "book",
+      title: "Kurikulum",
       description:
-        "Without defined levels, it is difficult to tell what you have actually learned and what still needs work.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.",
     },
     {
-      title: "Momentum fades",
+      icon: "mic",
+      title: "Praktik Berbicara",
       description:
-        "When the next step is vague, practice becomes occasional, and occasional practice is hard to sustain.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.",
     },
-  ] satisfies readonly ContentItem[],
-  conclusion:
-    "Mirski Japanese is built around a single sequence: learn the foundation, use it, strengthen it, then move up. One level at a time.",
+    {
+      icon: "users",
+      title: "Komunitas",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident.",
+    },
+  ],
 } as const;
 
-export const methodContent = {
-  eyebrow: "The method",
-  title: "A level is not a checklist. It is a shift in what you can do.",
+export const consultContent = {
+  eyebrow: "Konsultasi",
+  title: "Belum Tahu Harus Mulai dari Mana?",
   description:
-    "Every level follows the same rhythm: establish the foundation, put it to use, then strengthen what is still fragile. The content changes; the habit does not.",
-  steps: [
-    {
-      title: "Build the foundation",
-      description:
-        "Kana, core vocabulary, and grammar patterns are introduced in a deliberate order, so new language has something to attach to.",
-    },
-    {
-      title: "Use it in context",
-      description:
-        "Reading, listening, and speaking practice turn recognition into recall. The goal is language you can actually reach for.",
-    },
-    {
-      title: "Review, then extend",
-      description:
-        "Each level revisits what matters, closes gaps, and connects the next set of skills to what you already know.",
-    },
-  ] satisfies readonly ContentItem[],
+    "Ceritakan tujuanmu, tim Mirski siap membantu memilih level yang paling pas untuk kamu mulai.",
+  buttonLabel: "Konsultasi Gratis via WhatsApp",
+  // Shown under the button. Remove when the real WhatsApp channel exists.
+  demoNote: "Tombol demo — kanal WhatsApp belum terhubung.",
+  aside: {
+    title: "Sebelum mulai",
+    body: "Isi yang akan ditanyakan: tujuan belajar, level saat ini, dan waktu luang untuk belajar.",
+    items: ["Tujuan belajar", "Level saat ini", "Waktu belajar"],
+  },
 } as const;
 
-export const coursesContent = {
-  eyebrow: "The course system",
-  title: "Four levels. A foundation that holds.",
-  description:
-    "The path follows the JLPT scale from N5 to N2. Each level has a defined focus and a clear relationship to the one before it.",
-  note: "JLPT levels are reference points for progression, not a promise of exam results.",
-} as const;
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+};
 
-export const outcomesContent = {
-  eyebrow: "What you build",
-  title: "Progress you can point to.",
-  description: "Not a promise of fluency. A sequence of capabilities, each built on the last.",
+// PLACEHOLDER: replace with real, attributable testimonials before launch.
+export const testimonialsContent = {
+  eyebrow: "Testimoni",
+  title: "Pengalaman Mereka Belajar di Mirski Japanese",
+  note: "Testimoni di bawah masih placeholder.",
   items: [
     {
-      title: "A foundation that stays",
-      description:
-        "Kana, core grammar, and vocabulary become reliable tools rather than facts to memorise and forget.",
+      quote:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      name: "Lorem Ipsum",
+      role: "Dolor Sit Amet",
     },
     {
-      title: "A wider range",
-      description:
-        "Each level adds situations you can handle, from introductions to longer texts and more nuanced conversation.",
+      quote:
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      name: "Dolor Amet",
+      role: "Consectetur Adipiscing",
     },
     {
-      title: "A clear next step",
-      description: "You always know where you are on the path and what the next level asks of you.",
+      quote:
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      name: "Sit Amet",
+      role: "Sed Eiusmod",
     },
-  ] satisfies readonly ContentItem[],
+    {
+      quote:
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      name: "Elit Sed",
+      role: "Tempor Incididunt",
+    },
+    {
+      quote:
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+      name: "Magna Aliqua",
+      role: "Ut Labore",
+    },
+    {
+      quote:
+        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.",
+      name: "Veniam Quis",
+      role: "Nostrud Exercitation",
+    },
+  ] satisfies readonly Testimonial[],
 } as const;
 
 export const faqContent = {
-  eyebrow: "Questions",
-  title: "Before you begin.",
+  eyebrow: "FAQ",
+  title: "Sebelum Kamu Mulai",
+  description: "Pertanyaan yang paling sering muncul tentang level dan cara belajar di Mirski.",
   items: [
     {
-      question: "Where should I start if I am new to Japanese?",
+      question: "Saya pemula total. Mulai dari level mana?",
       answer:
-        "Starter N5. It begins with kana and the foundations of everyday Japanese, so it is designed for learners starting from the beginning.",
+        "Starter N5. Level ini dimulai dari hiragana dan katakana, lalu dasar bahasa Jepang sehari-hari, jadi cocok untuk kamu yang benar-benar mulai dari nol.",
     },
     {
-      question: "What do the levels mean?",
+      question: "Apa arti level N5 sampai N2?",
       answer:
-        "The path uses the JLPT scale from N5 to N2. N5 is the most foundational level; each step toward N2 adds range, nuance, and independence.",
+        "Level mengikuti skala JLPT. N5 adalah tingkat paling dasar, lalu N4, N3, dan N2 menambah jangkauan, nuansa, dan kemandirian dalam berbahasa Jepang.",
     },
     {
-      question: "How does each level build on the last?",
+      question: "Apakah levelnya harus berurutan?",
       answer:
-        "The levels are sequential. Starter N5 establishes kana, core vocabulary, and foundational grammar. Elementary N4 extends them, and Intermediate N3 and Advanced N2 add more natural range and precision.",
+        "Ya. Setiap level dibangun di atas level sebelumnya. Starter N5 membangun pondasi, Elementary N4 memperluasnya, lalu Intermediate N3 dan Advanced N2 menambah ketepatan.",
     },
     {
-      question: "Are the courses the same as the JLPT?",
+      question: "Berapa biaya dan durasi kelasnya?",
       answer:
-        "The levels use the JLPT scale as a shared reference point. The JLPT itself is an external exam, and its registration and results are handled by the official exam provider.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. (Informasi biaya dan jadwal masih placeholder.)",
     },
     {
-      question: "How do I enquire about enrolment?",
+      question: "Bagaimana cara konsultasi pendaftaran?",
       answer:
-        "Official enrolment contact details are not published on this site yet. They will be added here before launch.",
+        "Kanal konsultasi resmi belum dipublikasikan di situs ini. Tombol konsultasi saat ini masih demo dan akan dihubungkan ke WhatsApp setelah kanal resmi tersedia.",
     },
   ] satisfies readonly FaqItem[],
 } as const;
 
-export const ctaContent = {
-  eyebrow: "Start here",
-  title: "Start where you are. Build from there.",
+export const careerContent = {
+  title: "Mau Upgrade Karier? Bahasa Jepang Bisa Jadi Langkahnya.",
   description:
-    "Four levels, one direction. Explore the path, compare the levels, and take the first step when you are ready.",
-  primaryCta: {
-    label: "Explore the four levels",
-    href: "#path",
-  },
-  contactLabel: "Enrolment enquiries",
-  contactFallback: "Official contact details are not published on this site yet.",
-  contactNote:
-    "The right starting point depends on your experience. Use the course descriptions to compare levels.",
+    "Pilih level yang sesuai dengan tujuanmu, lalu konsultasikan langkah berikutnya bersama tim Mirski.",
+  buttonLabel: "Konsultasi Gratis Sekarang",
+  primaryCta: { label: "Lihat Pilihan Kelas", href: "#program" },
 } as const;

@@ -1,21 +1,23 @@
-import { Courses } from "@/components/sections/Courses";
+import { About } from "@/components/sections/About";
+import { CareerCta } from "@/components/sections/CareerCta";
+import { Consultation } from "@/components/sections/Consultation";
 import { Faq } from "@/components/sections/Faq";
-import { FinalCta } from "@/components/sections/FinalCta";
+import { Features } from "@/components/sections/Features";
 import { Hero } from "@/components/sections/Hero";
-import { Method } from "@/components/sections/Method";
-import { Outcomes } from "@/components/sections/Outcomes";
-import { WhyMirski } from "@/components/sections/WhyMirski";
+import { Journey } from "@/components/sections/Journey";
+import { Testimonials } from "@/components/sections/Testimonials";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <WhyMirski />
-      <Method />
-      <Courses />
-      <Outcomes />
+      <About />
+      <Journey />
+      <Features />
+      <Consultation />
+      <Testimonials />
+      <CareerCta />
       <Faq />
-      <FinalCta />
     </>
   );
 }

@@ -13,11 +13,11 @@ export const courses = [
     name: "Starter",
     japaneseName: "入門",
     jlpt: "N5",
-    tagline: "Begin with the basics, done properly.",
+    tagline: "Mulai dari dasar, dengan cara yang benar.",
     description:
-      "Start with hiragana and katakana, then build the vocabulary and sentence patterns behind everyday Japanese. The emphasis is on accuracy first, speed later.",
-    focus: "Kana · Core vocabulary · Foundational grammar",
-    goal: "Simple introductions, everyday exchanges, and short texts.",
+      "Mulai dari hiragana dan katakana, lalu bangun kosakata serta pola kalimat untuk bahasa Jepang sehari-hari. Fokus pada ketepatan dulu, kecepatan kemudian.",
+    focus: "Kana · Kosakata dasar · Tata bahasa dasar",
+    goal: "Perkenalan sederhana, percakapan harian, dan teks pendek.",
   },
   {
     id: "elementary-n4",
@@ -25,11 +25,11 @@ export const courses = [
     name: "Elementary",
     japaneseName: "初級",
     jlpt: "N4",
-    tagline: "From isolated phrases to connected thought.",
+    tagline: "Dari frasa terpisah ke pemikiran yang utuh.",
     description:
-      "Extend your grammar and vocabulary so you can follow familiar topics, read longer passages, and hold a more natural conversation.",
-    focus: "Grammar in use · Reading · Everyday conversation",
-    goal: "Longer exchanges and familiar topics with more independence.",
+      "Perluas tata bahasa dan kosakata agar kamu bisa mengikuti topik yang familier, membaca teks lebih panjang, dan bercakap lebih natural.",
+    focus: "Tata bahasa terapan · Membaca · Percakapan harian",
+    goal: "Percakapan lebih panjang dan topik familier dengan lebih mandiri.",
   },
   {
     id: "intermediate-n3",
@@ -37,11 +37,11 @@ export const courses = [
     name: "Intermediate",
     japaneseName: "中級",
     jlpt: "N3",
-    tagline: "The bridge to real-world Japanese.",
+    tagline: "Jembatan menuju bahasa Jepang dunia nyata.",
     description:
-      "Move beyond textbook sentences into the Japanese you meet in articles, stories, and conversation. N3 is where range and nuance begin to matter.",
-    focus: "Nuance · Longer texts · Fluent listening",
-    goal: "Follow and respond to Japanese across a wider range of situations.",
+      "Melangkah dari kalimat buku teks ke bahasa Jepang yang kamu temui di artikel, cerita, dan percakapan. Di N3, nuansa mulai diperhitungkan.",
+    focus: "Nuansa · Teks panjang · Menyimak lancar",
+    goal: "Mengikuti dan menanggapi bahasa Jepang di lebih banyak situasi.",
   },
   {
     id: "advanced-n2",
@@ -49,10 +49,10 @@ export const courses = [
     name: "Advanced",
     japaneseName: "中上級",
     jlpt: "N2",
-    tagline: "Range, nuance, and control.",
+    tagline: "Jangkauan, nuansa, dan kendali.",
     description:
-      "Work with complex texts, abstract ideas, and shifts in tone. N2 is the highest level in the current Mirski path, for learners who want to use Japanese with greater precision.",
-    focus: "Complex texts · Tone · Precision",
-    goal: "Engage with a broad range of Japanese in study, work, or daily life.",
+      "Bekerja dengan teks kompleks, gagasan abstrak, dan perubahan nada bicara. N2 adalah level tertinggi di jalur Mirski saat ini.",
+    focus: "Teks kompleks · Nada bicara · Ketepatan",
+    goal: "Menggunakan bahasa Jepang dengan lebih presisi untuk studi, kerja, atau hidup sehari-hari.",
   },
 ] as const satisfies readonly CourseLevel[];

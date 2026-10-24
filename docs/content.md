@@ -43,18 +43,22 @@ Avoid:
 
 ## Copy map
 
-| Section    | Source                   | Notes                                    |
-| ---------- | ------------------------ | ---------------------------------------- |
-| Metadata   | `src/config/site.ts`     | Title/description also used in sharing.  |
-| Header     | `src/config/site.ts`     | Navigation labels and enquiry CTA.       |
-| Hero       | `src/content/home.ts`    | Positions the four-level path.           |
-| Why a path | `src/content/home.ts`    | Learner problem and brand promise.       |
-| Method     | `src/content/home.ts`    | Three teaching principles.               |
-| Courses    | `src/content/courses.ts` | Four levels; only supplied course facts. |
-| Outcomes   | `src/content/home.ts`    | Capabilities, not guarantees.            |
-| FAQ        | `src/content/home.ts`    | Level/progression questions.             |
-| Final CTA  | `src/content/home.ts`    | Enrolment placeholder and path CTA.      |
-| Footer     | components + `site.ts`   | Navigation and level links.              |
+| Section       | Source                   | Notes                                              |
+| ------------- | ------------------------ | -------------------------------------------------- |
+| Metadata      | `src/config/site.ts`     | Title/description also used in sharing.            |
+| Header        | `src/config/site.ts`     | Navigation labels and consultation CTA.            |
+| Hero          | `src/content/home.ts`    | Positions the four-level path.                     |
+| About + stats | `src/content/home.ts`    | PLACEHOLDER statistics (`0+`) shown honestly.      |
+| Levels        | `src/content/courses.ts` | Four levels; only supplied course facts.           |
+| Features      | `src/content/home.ts`    | PLACEHOLDER lorem-ipsum feature copy.              |
+| Consultation  | `src/content/home.ts`    | Dummy WhatsApp button; no backend implemented.     |
+| Testimonials  | `src/content/home.ts`    | PLACEHOLDER lorem-ipsum testimonial cards.         |
+| Career CTA    | `src/content/home.ts`    | Consultation and programme links.                  |
+| FAQ           | `src/content/home.ts`    | Level, cost placeholder, and consultation answers. |
+| Footer        | `src/config/site.ts`     | Navigation, level links, placeholder address.      |
+
+Everything marked PLACEHOLDER must be replaced with verified business information before
+launch. The consultation form is display-only and the WhatsApp channel is not connected.
 
 Keep substantial copy in `src/content/`; do not bury it in layout components.
 

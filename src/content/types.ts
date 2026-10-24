@@ -10,11 +10,6 @@ export type CourseLevel = {
   goal: string;
 };
 
-export type ContentItem = {
-  title: string;
-  description: string;
-};
-
 export type FaqItem = {
   question: string;
   answer: string;

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Mirski Japanese — A clear path from first words to N2";
+export const alt = "Mirski Japanese — Kursus bahasa Jepang dari N5 sampai N2";
 export const size = {
   width: 1200,
   height: 630,
@@ -16,8 +16,8 @@ export default function OpengraphImage() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        backgroundColor: "#f7f2e7",
-        color: "#1c1a16",
+        backgroundColor: "#ffcc55",
+        color: "#241c10",
         padding: "72px",
       }}
     >
@@ -29,18 +29,19 @@ export default function OpengraphImage() {
             justifyContent: "center",
             width: "64px",
             height: "64px",
-            backgroundColor: "#b23a2a",
-            color: "#f7f2e7",
+            borderRadius: "50%",
+            backgroundColor: "#241c10",
+            color: "#ffcc55",
             fontSize: "34px",
           }}
         >
           道
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <span style={{ fontSize: "34px", fontWeight: 700, letterSpacing: "-0.02em" }}>
-            Mirski
+          <span style={{ fontSize: "34px", fontWeight: 800, letterSpacing: "-0.02em" }}>
+            Mirski Japanese
           </span>
-          <span style={{ fontSize: "16px", letterSpacing: "0.28em" }}>JAPANESE</span>
+          <span style={{ fontSize: "16px", letterSpacing: "0.28em" }}>KURSUS BAHASA JEPANG</span>
         </div>
       </div>
 
@@ -50,14 +51,18 @@ export default function OpengraphImage() {
             display: "flex",
             flexWrap: "wrap",
             fontSize: "76px",
+            fontWeight: 800,
             lineHeight: 1.04,
             letterSpacing: "-0.04em",
             maxWidth: "980px",
           }}
         >
-          <span>A clear path from&nbsp;</span>
-          <span style={{ color: "#b23a2a", fontStyle: "italic" }}>first words</span>
-          <span>&nbsp;to N2.</span>
+          <span>Jalan yang jelas dari&nbsp;</span>
+          <span style={{ display: "flex", flexDirection: "column" }}>
+            <span>kata pertama</span>
+            <span style={{ height: "10px", backgroundColor: "#fffaf2", marginTop: "-10px" }} />
+          </span>
+          <span>&nbsp;sampai N2.</span>
         </div>
         <div
           style={{
@@ -65,7 +70,7 @@ export default function OpengraphImage() {
             gap: "14px",
             fontSize: "20px",
             letterSpacing: "0.1em",
-            color: "#5a5348",
+            color: "#5f5343",
           }}
         >
           <span>STARTER N5</span>
@@ -82,14 +87,14 @@ export default function OpengraphImage() {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          borderTop: "1px solid rgba(28, 26, 22, 0.2)",
+          borderTop: "1px solid rgba(36, 28, 16, 0.2)",
           paddingTop: "24px",
           fontSize: "18px",
-          color: "#5a5348",
+          color: "#5f5343",
         }}
       >
-        <span>Japanese language education</span>
-        <span>Four levels · one direction</span>
+        <span>Kursus bahasa Jepang online</span>
+        <span>Empat level · satu arah</span>
       </div>
     </div>,
     size,
