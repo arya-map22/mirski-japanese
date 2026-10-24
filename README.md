@@ -60,3 +60,4 @@ Detailed project guidance lives in [`docs/`](./docs). Read `docs/architecture.md
 - Add a nonce-based CSP if the rendering model changes.
 
 See `docs/content.md` for the full list.
+

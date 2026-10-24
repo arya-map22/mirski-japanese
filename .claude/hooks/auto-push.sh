@@ -39,8 +39,20 @@ if [ -n "$dirty" ]; then
   fi
 fi
 
-if git push -q 2>/dev/null; then
-  emit "Auto-commit + push selesai. Vercel akan deploy dari push ini."
-else
+if ! git push -q 2>/dev/null; then
   emit "Commit lokal dibuat, tapi push gagal. Cek remote atau kredensial."
+  exit 0
 fi
+
+# Vercel deploys on push once the repo is connected through the Git integration.
+# A linked project (`vercel link`) also gets an explicit production deploy.
+if [ -f .vercel/project.json ]; then
+  if deployed=$(npx -y vercel@latest deploy --prod --yes 2>&1); then
+    emit "Auto-commit + push + deploy Vercel selesai."
+  else
+    emit "Push selesai, tapi deploy Vercel gagal: ${deployed##*$'\n'}"
+  fi
+  exit 0
+fi
+
+emit "Auto-commit + push selesai. Repo belum terhubung ke Vercel."
