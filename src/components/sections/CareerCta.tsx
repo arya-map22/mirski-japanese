@@ -10,9 +10,9 @@ export function CareerCta() {
         <div className="relative overflow-hidden rounded-[2rem] bg-brand px-6 py-12 sm:px-12 sm:py-16">
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute -right-10 -bottom-16 text-[12rem] leading-none font-extrabold text-cream/25 select-none"
+            className="pointer-events-none absolute -right-6 -bottom-10 text-[10rem] leading-none font-extrabold tracking-[-0.05em] text-cream/25 select-none"
           >
-            日本
+            N2
           </span>
 
           <div className="relative max-w-2xl">

@@ -32,10 +32,11 @@ export default function OpengraphImage() {
             borderRadius: "50%",
             backgroundColor: "#241c10",
             color: "#ffcc55",
-            fontSize: "34px",
+            fontSize: "28px",
+            fontWeight: 800,
           }}
         >
-          道
+          N5
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <span style={{ fontSize: "34px", fontWeight: 800, letterSpacing: "-0.02em" }}>
@@ -57,12 +58,12 @@ export default function OpengraphImage() {
             maxWidth: "980px",
           }}
         >
-          <span>Jalan yang jelas dari&nbsp;</span>
+          <span>Dari kata pertama&nbsp;</span>
           <span style={{ display: "flex", flexDirection: "column" }}>
-            <span>kata pertama</span>
+            <span>sampai N2</span>
             <span style={{ height: "10px", backgroundColor: "#fffaf2", marginTop: "-10px" }} />
           </span>
-          <span>&nbsp;sampai N2.</span>
+          <span>&nbsp;— satu jalur jelas.</span>
         </div>
         <div
           style={{

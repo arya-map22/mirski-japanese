@@ -36,13 +36,15 @@ Never place white text on the yellow palette. Use `ink` on yellow.
 
 ## Typography
 
-- **League Spartan** (variable weights 300–800) via `next/font/google`, Latin subset,
-  `display: "swap"`. Used for all UI and display text.
-- Headings: weight 700–800, tracking −0.03em, `text-balance`, fluid `clamp()` sizes
-  (`2rem → 3.25rem` section, up to `4.75rem` hero).
-- Body: 16–19px, line height 1.6–1.75, `ink-muted`.
+- **Body:** Helvetica (`"Helvetica Neue", Helvetica, Arial, ...`), the `font-sans` stack.
+  Root font size is 17px so default copy reads comfortably; body copy sits at 17–21px with
+  line height 1.6–1.75 in `ink-muted`.
+- **Headings:** League Spartan (variable 300–800) via `next/font/google`, Latin subset,
+  `display: "swap"`, applied to `h1`–`h4` through the `font-display` stack. Weight 700–800,
+  tracking −0.03em, `text-balance`, fluid `clamp()` sizes (`2rem → 3.25rem` section, up to
+  `4.75rem` hero).
 - Labels/eyebrows: 0.7rem, 600–700, tracking 0.16–0.18em, uppercase.
-- Japanese accents use the system JP stack via `font-jp`, always with `lang="ja"`.
+- No Japanese glyphs anywhere in the UI; level names are Indonesian (Pemula → Mahir).
 
 ## Layout
 
@@ -61,8 +63,9 @@ Never place white text on the yellow palette. Use `ink` on yellow.
 - **ButtonLink:** pill, min height 48px. Variants `primary` (yellow), `dark` (ink),
   `outline`, `light`.
 - **DemoButton:** consultation CTA; deliberately inert until the WhatsApp channel exists.
-- **Level card:** number badge, JLPT tag, name + Japanese name, tagline, description,
-  focus/target definition list, consultation link.
+- **Level timeline:** vertical rail with numbered badges (N5 at the top, N2 at the bottom),
+  each level a card with JLPT tag, name, tagline, description, focus/target definition list,
+  and a consultation link.
 - **Feature card:** icon tile on `cream-deep`.
 - **Testimonial card:** quote mark, quote, initial avatar, name, role.
 - **FAQ:** native `<details>/<summary>` with plus/minus glyph, no JavaScript.
@@ -70,7 +73,10 @@ Never place white text on the yellow palette. Use `ink` on yellow.
 ## Motion
 
 - Colour transitions only, 200ms; arrow nudge on hover.
-- `prefers-reduced-motion: reduce` disables smooth scrolling and transitions.
+- `.reveal` gives scroll-linked fade/rise (`animation-timeline: view()`, CSS only, no
+  JavaScript). It is opt-in via `@supports` and disabled under
+  `prefers-reduced-motion: reduce`, which also turns off smooth scrolling and transitions.
+  Browsers without scroll-driven animation support render content at rest.
 
 ## Imagery
 

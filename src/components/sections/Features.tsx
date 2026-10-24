@@ -18,12 +18,15 @@ export function Features() {
 
           <ul className="grid gap-4 sm:grid-cols-2 lg:col-span-8">
             {featuresContent.items.map((item) => (
-              <li key={item.title} className="rounded-3xl bg-cream-deep p-6 sm:p-7">
+              <li
+                key={item.title}
+                className="reveal rounded-3xl bg-cream-deep p-6 transition-colors duration-300 hover:bg-brand/40 sm:p-7"
+              >
                 <span className="flex size-12 items-center justify-center rounded-2xl bg-brand text-ink">
                   <FeatureIcon name={item.icon as FeatureIconName} className="size-6" />
                 </span>
                 <h3 className="mt-5 text-lg font-bold text-ink">{item.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-ink-muted">{item.description}</p>
+                <p className="mt-2 leading-7 text-ink-muted">{item.description}</p>
               </li>
             ))}
           </ul>

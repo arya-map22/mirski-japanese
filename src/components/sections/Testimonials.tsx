@@ -21,7 +21,7 @@ export function Testimonials() {
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {testimonialsContent.items.map((item, index) => (
-            <li key={index} className="flex">
+            <li key={index} className="reveal flex">
               <figure className="flex w-full flex-col rounded-3xl bg-cream p-6">
                 <span
                   aria-hidden="true"
@@ -29,7 +29,7 @@ export function Testimonials() {
                 >
                   &ldquo;
                 </span>
-                <blockquote className="mt-2 flex-1 text-sm leading-7 text-ink-muted">
+                <blockquote className="mt-2 flex-1 leading-7 text-ink-muted">
                   {item.quote}
                 </blockquote>
                 <figcaption className="mt-5 flex items-center gap-3 border-t border-ink/10 pt-4">

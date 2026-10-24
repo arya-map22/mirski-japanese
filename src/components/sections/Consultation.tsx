@@ -36,8 +36,7 @@ export function Consultation() {
                   <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-brand text-xs font-bold text-ink">
                     {index + 1}
                   </span>
-                  <span className="text-sm font-medium text-cream/80">{label}</span>
-                  <span className="ml-auto text-sm text-cream/50">Lorem ipsum</span>
+                  <span className="font-medium text-cream/80">{label}</span>
                 </li>
               ))}
             </ol>

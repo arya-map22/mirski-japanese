@@ -58,9 +58,9 @@ export function Hero() {
               </div>
               <span
                 aria-hidden="true"
-                className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand text-lg font-bold text-ink"
+                className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand text-lg font-extrabold text-ink"
               >
-                道
+                N5
               </span>
             </div>
 
@@ -81,11 +81,8 @@ export function Hero() {
                           JLPT {course.jlpt}
                         </span>
                       </span>
-                      <span lang="ja" className="block text-xs text-ink-soft">
-                        {course.japaneseName}
-                      </span>
                     </span>
-                    <ArrowRight className="size-4 shrink-0 text-ink-muted transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="size-4 shrink-0 text-ink-muted transition-transform duration-300 group-hover:translate-x-1" />
                   </a>
                 </li>
               ))}

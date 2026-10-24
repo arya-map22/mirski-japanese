@@ -2,7 +2,6 @@ export type CourseLevel = {
   id: string;
   number: string;
   name: string;
-  japaneseName: string;
   jlpt: "N5" | "N4" | "N3" | "N2";
   tagline: string;
   description: string;

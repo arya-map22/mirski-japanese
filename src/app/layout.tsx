@@ -54,7 +54,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="id" className={leagueSpartan.variable}>
-      <body className="flex min-h-dvh flex-col bg-cream font-sans text-ink antialiased">
+      <body className="flex min-h-dvh flex-col bg-cream font-sans text-base text-ink antialiased">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-cream"

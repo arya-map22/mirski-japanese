@@ -18,7 +18,7 @@ export function About() {
           <div className="lg:col-span-7 lg:pt-2">
             <p className="max-w-2xl text-lg leading-8 text-ink-muted">{aboutContent.description}</p>
 
-            <dl className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-5">
+            <dl className="reveal mt-10 grid grid-cols-2 gap-3 sm:grid-cols-5">
               {aboutContent.stats.map((stat) => (
                 <div key={stat.label} className="rounded-2xl bg-cream-deep px-4 py-5">
                   <dd className="text-2xl font-extrabold tracking-[-0.02em] text-ink">

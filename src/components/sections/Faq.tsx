@@ -37,9 +37,7 @@ export function Faq() {
                       <span className="absolute top-0 left-1/2 h-4 w-0.5 -translate-x-1/2 rounded bg-current transition-transform duration-200 group-open:rotate-90" />
                     </span>
                   </summary>
-                  <p className="max-w-2xl px-5 pb-5 text-sm leading-7 text-ink-muted">
-                    {item.answer}
-                  </p>
+                  <p className="max-w-2xl px-5 pb-5 leading-7 text-ink-muted">{item.answer}</p>
                 </details>
               ))}
             </div>
