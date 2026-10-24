@@ -36,13 +36,12 @@ export function PatternDecor({ side = "left", className, width = 320 }: PatternD
  */
 export function PatternDivider({ className }: { className?: string }) {
   return (
-    <div aria-hidden="true" className={cn("pointer-events-none overflow-hidden", className)}>
-      <Image
-        src="/patterns/pattern-long.svg"
-        alt=""
-        width={1440}
-        height={190}
-        className="h-10 w-full object-cover object-center select-none sm:h-14"
+    <div aria-hidden="true" className={cn("pointer-events-none select-none", className)}>
+      {/* Tiled at its natural aspect ratio: `auto 100%` scales by height and
+          lets the repeat fill the width, so the motif is never stretched. */}
+      <div
+        className="h-10 w-full bg-[image:url('/patterns/pattern-long.svg')] bg-center bg-repeat-x sm:h-14"
+        style={{ backgroundSize: "auto 100%" }}
       />
     </div>
   );
