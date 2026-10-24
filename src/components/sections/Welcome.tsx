@@ -35,9 +35,13 @@ export function Welcome() {
       <Container className="welcome-exit py-20 sm:py-24 lg:py-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <p
-            className="enter inline-flex items-center gap-2 rounded-full bg-cream/70 px-4 py-1.5 text-[0.7rem] font-semibold tracking-[0.16em] text-ink-muted uppercase backdrop-blur-sm"
+            className="enter rounded-full bg-cream/80 px-5 py-2 text-base font-semibold tracking-[0.02em] text-ink shadow-[0_1px_0_rgba(36,28,16,0.06)] backdrop-blur-sm sm:text-lg"
             style={{ animationDelay: "60ms" }}
           >
+            <span
+              aria-hidden="true"
+              className="mr-2 inline-block size-2 animate-pulse rounded-full bg-brand-deep align-middle"
+            />
             {welcomeContent.welcome}
           </p>
 

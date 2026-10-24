@@ -128,14 +128,6 @@
         animation-range: exit 0% exit 80%;
       }
 
-      /* Carousel focus: the card nearest the inline centre is full strength,
-         neighbours fade and shrink. Tied to the horizontal scroll offset, so it
-         works without JavaScript. */
-      .slide-focus {
-        animation: slide-focus linear both;
-        animation-timeline: view(inline);
-        animation-range: cover;
-      }
     }
 
     .float {
@@ -146,9 +138,33 @@
       animation: marquee 38s linear infinite;
     }
 
-    .marquee:hover .marquee-track {
+    /* Testimonials drift rightwards, slower, because the cards are wide. */
+    .marquee-track-reverse {
+      animation: marquee-reverse 60s linear infinite;
+    }
+
+    .marquee:hover .marquee-track,
+    .marquee:hover .marquee-track-reverse,
+    .marquee:focus-within .marquee-track,
+    .marquee:focus-within .marquee-track-reverse {
       animation-play-state: paused;
     }
+  }
+
+  .marquee {
+    overflow: hidden;
+  }
+
+  /* Cards dissolve at the edges instead of being cut off. */
+  .marquee-fade {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 6%,
+      #000 94%,
+      transparent
+    );
+    mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
   }
 
   @keyframes fade-up {
@@ -224,18 +240,6 @@
     }
   }
 
-  @keyframes slide-focus {
-    0%,
-    100% {
-      opacity: 0.4;
-      transform: scale(0.94);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
   @keyframes float {
     0%,
     100% {
@@ -252,6 +256,15 @@
     }
   }
 
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -259,10 +272,10 @@
 
     .reveal,
     .reveal-title,
-    .slide-focus,
     .enter,
     .float,
     .marquee-track,
+    .marquee-track-reverse,
     .rail-grow,
     .welcome-bg,
     .welcome-exit {
@@ -272,6 +285,13 @@
     /* The wash tint only exists as an animation, so drop it entirely. */
     .reveal-wash::before {
       content: none;
+    }
+
+    /* With the drift gone, let the strip be scrolled by hand instead. */
+    .marquee {
+      overflow-x: auto;
+      mask-image: none;
+      -webkit-mask-image: none;
     }
 
     *,
