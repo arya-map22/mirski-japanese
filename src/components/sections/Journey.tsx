@@ -41,7 +41,7 @@ export function Journey() {
 
             return (
               <li key={course.id} id={course.id} className="relative pb-10 last:pb-0">
-                <div className="reveal group flex gap-5 sm:gap-7">
+                <div className="reveal-solid group flex gap-5 sm:gap-7">
                   <span
                     aria-hidden="true"
                     className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-extrabold text-ink ring-[6px] ring-cream transition-transform duration-300 group-hover:scale-110 sm:size-14"
