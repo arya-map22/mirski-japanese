@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
   --color-cream: #fffaf2;
@@ -13,8 +17,36 @@
 }
 
 @theme inline {
+  /* Literal stacks: `@theme inline` resolves at parse time, so a runtime
+     CSS variable (next/font) would resolve to nothing. */
   --font-sans: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", system-ui, sans-serif;
   --font-display: var(--font-league-spartan), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-display);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 @layer base {
@@ -23,13 +55,13 @@
     font-size: 17px;
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    @apply font-sans;
   }
 
   body {
-    background-color: var(--color-cream);
-    color: var(--color-ink);
     font-family: var(--font-sans);
     text-rendering: optimizeLegibility;
+    @apply bg-background text-foreground;
   }
 
   h1,
@@ -348,4 +380,34 @@
       transition-duration: 0.01ms !important;
     }
   }
+  * {
+    @apply border-border outline-ring/50;
+  }
+}
+
+/* shadcn tokens mapped onto the Mirski brand palette. Movement direction is
+   light-only: the site has no dark mode, so no `.dark` block is defined.
+   `primary` is the brand yellow, paired with ink text (11.2:1). */
+:root {
+  --background: #fffaf2;
+  --foreground: #241c10;
+  --card: #fffaf2;
+  --card-foreground: #241c10;
+  --popover: #fffaf2;
+  --popover-foreground: #241c10;
+  --primary: #ffcc55;
+  --primary-foreground: #241c10;
+  --secondary: #ffedcf;
+  --secondary-foreground: #241c10;
+  --muted: #ffedcf;
+  --muted-foreground: #5f5343;
+  --accent: #ffedcf;
+  --accent-foreground: #241c10;
+  --destructive: #b3261e;
+  /* shadcn applies `border-border` to every element, so this must be a hairline
+     tint, not solid ink. Decorative only; text contrast is unaffected. */
+  --border: color-mix(in oklab, #241c10 12%, transparent);
+  --input: color-mix(in oklab, #241c10 18%, transparent);
+  --ring: #241c10;
+  --radius: 0.75rem;
 }

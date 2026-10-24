@@ -1,3 +1,9 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PatternDecor } from "@/components/ui/PatternDecor";
@@ -25,28 +31,22 @@ export function Faq() {
           </div>
 
           <div className="lg:col-span-8">
-            <div className="space-y-3">
+            <Accordion type="single" collapsible className="space-y-3">
               {faqContent.items.map((item) => (
-                <details
+                <AccordionItem
                   key={item.question}
-                  className="group rounded-2xl border border-ink/10 bg-cream open:bg-cream-deep/40"
+                  value={item.question}
+                  className="rounded-2xl border border-ink/10 bg-cream px-5 not-last:border-b data-[state=open]:bg-cream-deep/40"
                 >
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6 rounded-2xl px-5 py-4 text-left">
-                    <span className="text-base leading-snug font-bold text-balance text-ink">
-                      {item.question}
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="relative mt-1 size-4 shrink-0 rounded-full text-ink"
-                    >
-                      <span className="absolute top-1/2 left-0 h-0.5 w-4 -translate-y-1/2 rounded bg-current" />
-                      <span className="absolute top-0 left-1/2 h-4 w-0.5 -translate-x-1/2 rounded bg-current transition-transform duration-200 group-open:rotate-90" />
-                    </span>
-                  </summary>
-                  <p className="max-w-2xl px-5 pb-5 leading-7 text-ink-muted">{item.answer}</p>
-                </details>
+                  <AccordionTrigger className="gap-6 py-4 text-base font-bold text-ink hover:no-underline">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="max-w-2xl pb-5 leading-7 text-ink-muted">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </div>
         </div>
       </Container>
