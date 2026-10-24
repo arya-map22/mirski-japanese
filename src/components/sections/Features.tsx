@@ -20,9 +20,9 @@ export function Features() {
             {featuresContent.items.map((item) => (
               <li
                 key={item.title}
-                className="reveal rounded-3xl bg-cream-deep p-6 transition-colors duration-300 hover:bg-brand/40 sm:p-7"
+                className="reveal group rounded-3xl bg-cream-deep p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-brand/40 hover:shadow-[0_20px_45px_-30px_rgba(36,28,16,0.5)] sm:p-7"
               >
-                <span className="flex size-12 items-center justify-center rounded-2xl bg-brand text-ink">
+                <span className="flex size-12 items-center justify-center rounded-2xl bg-brand text-ink transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
                   <FeatureIcon name={item.icon as FeatureIconName} className="size-6" />
                 </span>
                 <h3 className="mt-5 text-lg font-bold text-ink">{item.title}</h3>

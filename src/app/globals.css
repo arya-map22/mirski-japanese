@@ -61,6 +61,11 @@
     display: none;
   }
 
+  /* Entrance: runs once on load. Delays are set per element inline. */
+  .enter {
+    animation: fade-up 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
   /* Scroll-reveal: progressive enhancement, no JavaScript. Browsers without
      view-timeline support simply render the content at rest. */
   @media (prefers-reduced-motion: no-preference) {
@@ -70,6 +75,37 @@
         animation-timeline: view();
         animation-range: entry 0% cover 32%;
       }
+
+      /* Rail that fills as the level list scrolls past. */
+      .rail-grow {
+        transform-origin: top;
+        animation: rail-grow linear both;
+        animation-timeline: view();
+        animation-range: entry 10% cover 70%;
+      }
+    }
+
+    .float {
+      animation: float 9s ease-in-out infinite;
+    }
+
+    .marquee-track {
+      animation: marquee 38s linear infinite;
+    }
+
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
@@ -81,6 +117,31 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes rail-grow {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-14px) rotate(4deg);
+    }
+  }
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
     }
   }
 

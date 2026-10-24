@@ -7,10 +7,11 @@ export function CareerCta() {
   return (
     <section aria-labelledby="career-heading" className="py-16 sm:py-24">
       <Container>
-        <div className="relative overflow-hidden rounded-[2rem] bg-brand px-6 py-12 sm:px-12 sm:py-16">
+        <div className="reveal relative overflow-hidden rounded-[2rem] bg-brand px-6 py-12 sm:px-12 sm:py-16">
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute -right-6 -bottom-10 text-[10rem] leading-none font-extrabold tracking-[-0.05em] text-cream/25 select-none"
+            className="float pointer-events-none absolute -right-6 -bottom-10 text-[10rem] leading-none font-extrabold tracking-[-0.05em] text-cream/25 select-none"
+            style={{ animationDelay: "-3s" }}
           >
             N2
           </span>

@@ -22,7 +22,7 @@ export function Testimonials() {
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {testimonialsContent.items.map((item, index) => (
             <li key={index} className="reveal flex">
-              <figure className="flex w-full flex-col rounded-3xl bg-cream p-6">
+              <figure className="flex w-full flex-col rounded-3xl bg-cream p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_-30px_rgba(36,28,16,0.4)]">
                 <span
                   aria-hidden="true"
                   className="text-3xl leading-none font-extrabold text-brand-deep"

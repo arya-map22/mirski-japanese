@@ -12,7 +12,7 @@ type ButtonLinkProps = {
 };
 
 const base =
-  "inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold tracking-[0.01em] transition-colors duration-200";
+  "inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold tracking-[0.01em] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0";
 
 const variants: Record<ButtonVariant, string> = {
   primary: "bg-brand-deep text-ink hover:bg-brand-orange",

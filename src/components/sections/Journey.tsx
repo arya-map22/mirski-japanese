@@ -21,10 +21,14 @@ export function Journey() {
         </div>
 
         <ol className="relative mx-auto mt-14 max-w-3xl">
-          {/* Rail */}
+          {/* Rail: track, plus a brand-coloured fill that grows with the scroll. */}
           <span
             aria-hidden="true"
             className="absolute top-4 bottom-4 left-6 w-px bg-ink/15 sm:left-7"
+          />
+          <span
+            aria-hidden="true"
+            className="rail-grow absolute top-4 bottom-4 left-6 w-px bg-brand-deep sm:left-7"
           />
 
           {courses.map((course, index) => {
@@ -32,17 +36,17 @@ export function Journey() {
 
             return (
               <li key={course.id} id={course.id} className="relative pb-10 last:pb-0">
-                <div className="reveal flex gap-5 sm:gap-7">
+                <div className="reveal group flex gap-5 sm:gap-7">
                   <span
                     aria-hidden="true"
-                    className={`relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full text-sm font-extrabold text-ink ring-[6px] ring-cream sm:size-14 ${accents[index % accents.length]}`}
+                    className={`relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full text-sm font-extrabold text-ink ring-[6px] ring-cream transition-transform duration-300 group-hover:scale-110 sm:size-14 ${accents[index % accents.length]}`}
                   >
                     {course.number}
                   </span>
 
                   <article
                     aria-labelledby={`${course.id}-title`}
-                    className="group min-w-0 flex-1 rounded-3xl border border-ink/10 bg-cream p-5 transition-colors duration-300 hover:border-ink/25 sm:p-7"
+                    className="min-w-0 flex-1 rounded-3xl border border-ink/10 bg-cream p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-ink/25 group-hover:shadow-[0_20px_45px_-30px_rgba(36,28,16,0.5)] sm:p-7"
                   >
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
                       <h3 id={`${course.id}-title`} className="text-xl font-bold text-ink sm:text-2xl">
